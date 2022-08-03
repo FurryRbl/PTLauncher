@@ -1,4 +1,4 @@
-﻿using PTLauncher.API.Dos;
+﻿using static PTLauncher.API.Util;
 using System.Windows;
 using System.IO;
 using PTLauncher.API.Log;
@@ -14,13 +14,13 @@ namespace PTLauncher
             ConfigLoader(); /* 初始化配置文件 */ /* Initializes the configuration file */
             if (args.Length == 0)
             {
-                Dos.Hide();
+                DosHide();
             }
             else
             {
                 if (args[0] != "--debug")
                 {
-                    Console.WriteLine("仅支持“--debug”参数");
+                    Console.WriteLine(Util.GetLang("CommandHelpArgs"));
                     Environment.Exit(0);
                 }
             }
@@ -35,7 +35,8 @@ namespace PTLauncher
 
             if (!File.Exists(@"Config\Config.ini"))
             {
-                Default.Config();
+                Util.PTLauncher.Write("Lang", "zh_cn");
+                Util.PTLauncher.Write("MxRam", "2048");
             }
         }
         [STAThread]

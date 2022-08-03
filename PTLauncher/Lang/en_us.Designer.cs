@@ -59,5 +59,23 @@ namespace PTLauncher.Lang {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   查找类似 Ohly &apos;--debug&apos; parameters are supported 的本地化字符串。
+        /// </summary>
+        internal static string CommandHelpArgs {
+            get {
+                return ResourceManager.GetString("CommandHelpArgs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Fatal error 的本地化字符串。
+        /// </summary>
+        internal static string UI_Log_Fail_Window_Title {
+            get {
+                return ResourceManager.GetString("UI.Log.Fail.Window.Title", resourceCulture);
+            }
+        }
     }
 }
